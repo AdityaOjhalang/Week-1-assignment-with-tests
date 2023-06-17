@@ -17,6 +17,58 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+
+  constructor(result) {
+      this.result = 0;
+  }
+  add(a){
+      this.result = this.result +a ;
+      return this.result;
+  }
+  subtract(a){
+      this.result = this.result - a ;
+      return this.result;
+  }
+  multiply(a){
+      this.result = this.result  * a ;
+
+      return this.result;
+  }
+  divide(a){
+  if(a !== 0)
+  {
+    this.result = this.result / a ;
+        return this.result;
+
+  }
+
+  else{
+    throw new Error("Error");
+  }
+      
+  }
+  clear(){
+      this.result = 0;
+      return this.result;
+  }
+  getResult(){
+      return this.result;
+  }
+  calculate(string){
+  let b = eval(string)
+  if (b != "Infinity") {
+    this.result = b;
+    return this.result;
+      
+  } 
+  else 
+  {    
+    throw new Error("Invalid Expression");
+  }
+}
+}
+
+
 
 module.exports = Calculator;
